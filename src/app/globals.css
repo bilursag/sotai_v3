@@ -74,3 +74,81 @@
     background-size: 24px 24px;
   }
 }
+
+/* Añadir estos estilos al final de src/app/globals.css */
+
+@layer utilities {
+  /* Variables para CSS */
+  :root {
+    --primary-rgb: 24, 24, 27; /* Ajusta estos valores para que coincidan con tu color primario */
+  }
+  
+  .dark {
+    --primary-rgb: 240, 240, 240; /* Versión para modo oscuro */
+  }
+  
+  /* Clases de animación */
+  .animate-in {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+  }
+  
+  .animate-slide-up {
+    animation-name: slideUp;
+  }
+  
+  .animate-fade-in {
+    animation-name: fadeIn;
+  }
+  
+  /* Retrasos de animación */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  .animate-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animate-delay-700 {
+    animation-delay: 700ms;
+  }
+  
+  /* Keyframes para las animaciones */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Code, Database, Globe, Server, Palette, Cpu, ArrowRight } from "lucide-react";
+import { Code, Database, Globe, Server, Palette, Cpu, ArrowRight, CreditCard } from "lucide-react";
 
 // Datos de tecnologías
 const technologies = [
@@ -43,6 +43,19 @@ const technologies = [
       { name: "Firebase", level: 4 },
       { name: "Prisma", level: 4 },
       { name: "Supabase", level: 3 }
+    ]
+  },
+  {
+    category: "Pasarelas de Pago",
+    icon: <CreditCard className="h-5 w-5" />,
+    items: [
+      { name: "WebPay Plus", level: 5 },
+      { name: "WebPay OneClick", level: 4 },
+      { name: "MercadoPago Checkout", level: 5 },
+      { name: "MercadoPago API", level: 4 },
+      { name: "PayPal", level: 3 },
+      { name: "Stripe", level: 3 },
+      { name: "Integración POS", level: 3 }
     ]
   },
   {
@@ -159,7 +172,7 @@ export function TechStack() {
             ¿No encuentras la tecnología que necesitas para tu proyecto?
           </p>
           <a
-            href="/contacto"
+            href="/contact"
             className="inline-flex items-center text-sm font-medium text-primary hover:underline"
           >
             Contáctame para discutir tus requerimientos específicos

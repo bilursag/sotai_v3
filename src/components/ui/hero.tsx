@@ -6,65 +6,206 @@ export function Hero() {
     <div className="relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-100 to-white dark:from-zinc-900 dark:to-background" />
-
+      
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
-
+      
       <div className="relative container mx-auto px-4 py-24 md:py-32">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-primary/10 text-primary backdrop-blur-sm border border-primary/20">
-            <span className="relative px-2">Desarrollo Full-Stack & Consultoría</span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content Column */}
+          <div className="space-y-8 text-center lg:text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-primary/10 text-primary backdrop-blur-sm border border-primary/20">
+              <span className="relative px-2">Desarrollo Full-Stack & Consultoría</span>
+            </div>
+            
+            {/* Heading */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+              Soluciones de desarrollo{" "}
+              <span className="bg-gradient-to-r from-primary to-blue-500 dark:from-primary dark:to-blue-400 text-transparent bg-clip-text">
+                personalizadas
+              </span>{" "}
+              para tu negocio
+            </h1>
+            
+            {/* Description */}
+            <p className="text-xl text-muted-foreground">
+              Transformamos ideas en productos digitales de alta calidad. Desde diseño hasta implementación, ofrecemos soluciones tecnológicas a la medida de tus necesidades.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link
+                href="/contacto"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              >
+                Contactar ahora
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Link>
+              <Link
+                href="/servicios"
+                className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              >
+                Ver servicios
+              </Link>
+            </div>
           </div>
-
-          {/* Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            Soluciones de desarrollo{" "}
-            <span className="bg-gradient-to-r from-primary to-blue-500 dark:from-primary dark:to-blue-400 text-transparent bg-clip-text">
-              personalizadas
-            </span>{" "}
-            para tu negocio
-          </h1>
-
-          {/* Description */}
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Transformamos ideas en productos digitales de alta calidad. Desde diseño hasta implementación, ofrecemos soluciones tecnológicas a la medida de tus necesidades.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contacto"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              Empecemos a conversar
-              <ChevronRight className="ml-1 h-4 w-4" />
-            </Link>
-            <Link
-              href="/servicios"
-              className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-6 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              Ver servicios
-            </Link>
+          
+          {/* Code Column */}
+          <div className="hidden lg:block relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/10 to-background rounded-lg"></div>
+            <div className="relative overflow-hidden rounded-lg border bg-card shadow-xl">
+              {/* Code Editor Header */}
+              <div className="flex items-center justify-between border-b px-4 py-2 bg-muted/50">
+                <div className="flex space-x-2">
+                  <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                </div>
+                <div className="text-xs font-medium">App.tsx</div>
+                <div className="text-xs text-muted-foreground">React</div>
+              </div>
+              
+              {/* Code Content */}
+              <div className="overflow-x-auto p-4 font-mono text-sm">
+                <pre className="text-left">
+                  <code className="language-tsx">
+                    <span className="text-blue-500">import</span>
+                    <span className="text-foreground"> React, &#123; useState, useEffect &#125; </span>
+                    <span className="text-blue-500">from</span>
+                    <span className="text-foreground"> </span>
+                    <span className="text-green-500">'react'</span>
+                    <span className="text-foreground">;</span>
+                    
+                    <br/><br/>
+                    
+                    <span className="text-blue-500">import</span>
+                    <span className="text-foreground"> &#123; motion &#125; </span>
+                    <span className="text-blue-500">from</span>
+                    <span className="text-foreground"> </span>
+                    <span className="text-green-500">'framer-motion'</span>
+                    <span className="text-foreground">;</span>
+                    
+                    <br/><br/>
+                    
+                    <span className="text-purple-500">interface</span>
+                    <span className="text-foreground"> </span>
+                    <span className="text-yellow-500">Project</span>
+                    <span className="text-foreground"> &#123;</span>
+                    <br/>
+                    <span className="text-foreground">  id: </span>
+                    <span className="text-yellow-500">number</span>
+                    <span className="text-foreground">;</span>
+                    <br/>
+                    <span className="text-foreground">  title: </span>
+                    <span className="text-yellow-500">string</span>
+                    <span className="text-foreground">;</span>
+                    <br/>
+                    <span className="text-foreground">  description: </span>
+                    <span className="text-yellow-500">string</span>
+                    <span className="text-foreground">;</span>
+                    <br/>
+                    <span className="text-foreground">  technologies: </span>
+                    <span className="text-yellow-500">string</span>
+                    <span className="text-foreground">[];</span>
+                    <br/>
+                    <span className="text-foreground">&#125;</span>
+                    
+                    <br/><br/>
+                    
+                    <span className="text-blue-500">const</span>
+                    <span className="text-foreground"> </span>
+                    <span className="text-yellow-500">PortfolioShowcase</span>
+                    <span className="text-foreground"> = () => &#123;</span>
+                    <br/>
+                    <span className="text-foreground">  </span>
+                    <span className="text-blue-500">const</span>
+                    <span className="text-foreground"> [projects, setProjects] = </span>
+                    <span className="text-purple-500">useState</span>
+                    <span className="text-foreground">&lt;</span>
+                    <span className="text-yellow-500">Project</span>
+                    <span className="text-foreground">[]&gt;([]);</span>
+                    <br/><br/>
+                    
+                    <span className="text-foreground">  </span>
+                    <span className="text-purple-500">useEffect</span>
+                    <span className="text-foreground">(() => &#123;</span>
+                    <br/>
+                    <span className="text-foreground">    </span>
+                    <span className="text-blue-500">const</span>
+                    <span className="text-foreground"> fetchProjects = </span>
+                    <span className="text-blue-500">async</span>
+                    <span className="text-foreground"> () => &#123;</span>
+                    <br/>
+                    <span className="text-foreground">      </span>
+                    <span className="text-green-500">// Fetching projects data</span>
+                    <br/>
+                    <span className="text-foreground">      </span>
+                    <span className="text-blue-500">const</span>
+                    <span className="text-foreground"> response = </span>
+                    <span className="text-blue-500">await</span>
+                    <span className="text-foreground"> fetch(</span>
+                    <span className="text-green-500">'/api/projects'</span>
+                    <span className="text-foreground">);</span>
+                    <br/>
+                    <span className="text-foreground">      </span>
+                    <span className="text-blue-500">const</span>
+                    <span className="text-foreground"> data = </span>
+                    <span className="text-blue-500">await</span>
+                    <span className="text-foreground"> response.json();</span>
+                    <br/>
+                    <span className="text-foreground">      setProjects(data);</span>
+                    <br/>
+                    <span className="text-foreground">    &#125;;</span>
+                    <br/><br/>
+                    
+                    <span className="text-foreground">    fetchProjects();</span>
+                    <br/>
+                    <span className="text-foreground">  &#125;, []);</span>
+                    <br/><br/>
+                    
+                    <span className="text-foreground">  </span>
+                    <span className="text-blue-500">return</span>
+                    <span className="text-foreground"> (</span>
+                    <br/>
+                    <span className="text-foreground">    </span>
+                    <span className="text-purple-500">&lt;motion.div&gt;</span>
+                    <br/>
+                    <span className="text-foreground">      </span>
+                    <span className="text-green-500">&#123;/* Component content */&#125;</span>
+                    <br/>
+                    <span className="text-foreground">    </span>
+                    <span className="text-purple-500">&lt;/motion.div&gt;</span>
+                    <br/>
+                    <span className="text-foreground">  );</span>
+                    <br/>
+                    <span className="text-foreground">&#125;;</span>
+                  </code>
+                </pre>
+              </div>
+            </div>
+            
+            {/* Code Reflection/Glow Effect */}
+            <div className="absolute -bottom-6 -left-6 -right-6 h-24 bg-gradient-to-t from-background to-transparent"></div>
           </div>
         </div>
-
+        
         {/* Services Cards */}
         <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <ServiceCard
-            icon={<Code className="h-6 w-6" />}
-            title="Desarrollo Web"
-            description="Creamos aplicaciones web modernas con React, Next.js y otras tecnologías de vanguardia."
+          <ServiceCard 
+            icon={<Code className="h-6 w-6" />} 
+            title="Desarrollo Web" 
+            description="Creamos aplicaciones web modernas con React, Next.js y otras tecnologías de vanguardia." 
           />
-          <ServiceCard
-            icon={<Database className="h-6 w-6" />}
-            title="Backend & API"
-            description="Desarrollamos backends robustos y APIs eficientes para potenciar tus aplicaciones."
+          <ServiceCard 
+            icon={<Database className="h-6 w-6" />} 
+            title="Backend & API" 
+            description="Desarrollamos backends robustos y APIs eficientes para potenciar tus aplicaciones." 
           />
-          <ServiceCard
-            icon={<Lightbulb className="h-6 w-6" />}
-            title="Consultoría"
-            description="Asesoramos en estrategias tecnológicas para optimizar tus procesos y productos digitales."
+          <ServiceCard 
+            icon={<Lightbulb className="h-6 w-6" />} 
+            title="Consultoría" 
+            description="Asesoramos en estrategias tecnológicas para optimizar tus procesos y productos digitales." 
           />
         </div>
       </div>

@@ -1,33 +1,29 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Menu, X, ChevronDown } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Páginas actuales del sitio
 const navItems = [
-  {
-    title: "Servicios",
-    href: "/servicios",
-    children: [
-      { title: "Desarrollo Web", href: "/servicios/web" },
-      { title: "Backend & API", href: "/servicios/backend" },
-      { title: "Consultoría", href: "/servicios/consultoria" },
-    ],
-  },
-  { title: "Proyectos", href: "/proyectos" },
-  { title: "Sobre mí", href: "/sobre-mi" },
-  { title: "Blog", href: "/blog" },
+  { title: "Inicio", href: "/" },
+  { title: "Servicios", href: "/services" },
+  { title: "Contacto", href: "/contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
 
-  const toggleDropdown = (title: string) => {
-    setActiveDropdown(activeDropdown === title ? null : title);
+  // Función para verificar si un enlace está activo
+  const isActive = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
   };
 
   return (
@@ -42,44 +38,16 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-6">
             {navItems.map((item) => (
-              <div key={item.title} className="relative group">
-                {item.children ? (
-                  <button
-                    onClick={() => toggleDropdown(item.title)}
-                    className="flex items-center space-x-1 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
-                  >
-                    <span>{item.title}</span>
-                    <ChevronDown className="h-4 w-4" />
-                  </button>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
-                  >
-                    {item.title}
-                  </Link>
+              <Link
+                key={item.title}
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-foreground",
+                  isActive(item.href) ? "text-foreground" : "text-foreground/60"
                 )}
-
-                {/* Dropdown para submenús */}
-                {item.children && (
-                  <div
-                    className={cn(
-                      "absolute left-0 top-full z-50 mt-1 min-w-[180px] rounded-md border bg-background p-2 shadow-md",
-                      activeDropdown === item.title ? "block" : "hidden group-hover:block"
-                    )}
-                  >
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.title}
-                        href={child.href}
-                        className="block rounded-sm px-3 py-2 text-sm hover:bg-muted"
-                      >
-                        {child.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              >
+                {item.title}
+              </Link>
             ))}
           </div>
 
@@ -97,7 +65,7 @@ export function Navbar() {
 
             {/* Contact Button */}
             <Link
-              href="/contacto"
+              href="/contact"
               className="hidden md:inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
             >
               Contacto
@@ -108,7 +76,11 @@ export function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-foreground md:hidden"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </button>
           </div>
         </div>
@@ -119,54 +91,18 @@ export function Navbar() {
         <div className="md:hidden">
           <div className="space-y-1 px-4 pb-3 pt-2">
             {navItems.map((item) => (
-              <div key={item.title} className="py-1">
-                {item.children ? (
-                  <>
-                    <button
-                      onClick={() => toggleDropdown(item.title)}
-                      className="flex w-full items-center justify-between rounded-md py-2 text-base font-medium"
-                    >
-                      {item.title}
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 transition-transform",
-                          activeDropdown === item.title ? "rotate-180" : ""
-                        )}
-                      />
-                    </button>
-                    {activeDropdown === item.title && (
-                      <div className="ml-4 mt-1 space-y-1 border-l pl-4">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.title}
-                            href={child.href}
-                            onClick={() => setIsOpen(false)}
-                            className="block py-2 text-sm text-foreground/70"
-                          >
-                            {child.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block rounded-md py-2 text-base font-medium"
-                  >
-                    {item.title}
-                  </Link>
+              <Link
+                key={item.title}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "block py-2 text-base font-medium",
+                  isActive(item.href) ? "text-foreground" : "text-foreground/60"
                 )}
-              </div>
+              >
+                {item.title}
+              </Link>
             ))}
-            <Link
-              href="/contacto"
-              onClick={() => setIsOpen(false)}
-              className="mt-4 block rounded-md bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground"
-            >
-              Contacto
-            </Link>
           </div>
         </div>
       )}

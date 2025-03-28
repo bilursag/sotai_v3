@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Columna 1: Información de contacto */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">DevStudio</h3>
+            <h3 className="text-lg font-semibold">Sotai</h3>
             <p className="text-sm text-muted-foreground">
               Soluciones de desarrollo personalizadas para tu negocio
             </p>
@@ -146,7 +146,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-12 border-t pt-6">
           <p className="text-center text-sm text-muted-foreground">
-            &copy; {currentYear} DevStudio. Todos los derechos reservados.
+            &copy; {currentYear} Sotai. Todos los derechos reservados.
           </p>
         </div>
       </div>

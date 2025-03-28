@@ -144,7 +144,7 @@ export function Workflow() {
             <MessageCircle className="h-5 w-5 text-primary" />
             <span className="text-sm">
               ¿Tienes preguntas sobre mi proceso de trabajo?{" "}
-              <a href="/contacto" className="font-medium text-primary hover:underline">
+              <a href="/contact" className="font-medium text-primary hover:underline">
                 Agenda una consulta gratuita
               </a>
             </span>
