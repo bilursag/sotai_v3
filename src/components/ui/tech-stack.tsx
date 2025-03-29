@@ -4,7 +4,6 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Code, Database, Globe, Server, Palette, Cpu, ArrowRight, CreditCard } from "lucide-react";
 
-// Datos de tecnologías
 const technologies = [
   {
     category: "Frontend",
@@ -119,7 +118,6 @@ export function TechStack() {
           </p>
         </div>
 
-        {/* Tabs de categorías */}
         <div className="flex overflow-x-auto pb-4 mb-8 gap-2 justify-center">
           {technologies.map((tech) => (
             <button
@@ -138,7 +136,6 @@ export function TechStack() {
           ))}
         </div>
 
-        {/* Grid de tecnologías */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {technologies
             .find((tech) => tech.category === activeCategory)
@@ -166,7 +163,6 @@ export function TechStack() {
             ))}
         </div>
 
-        {/* CTA de tecnologías */}
         <div className="mt-16 text-center">
           <p className="text-muted-foreground mb-4">
             ¿No encuentras la tecnología que necesitas para tu proyecto?

@@ -39,7 +39,6 @@ const gateways = [
   },
 ];
 
-// Casos de estudio (puedes reemplazar con casos reales)
 const caseStudies = [
   {
     title: "Tienda de comercio electrónico de moda",
@@ -78,10 +77,8 @@ export default function PaymentGatewaysPage() {
           { title: "Pasarelas de Pago", href: "/servicios/paywalls" },
         ]}
       />
-
       <div className="bg-background py-12 md:py-20">
         <div className="container mx-auto px-4">
-          {/* Introducción */}
           <div className="max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-6">
               Procesos de pago seguros y eficientes
@@ -98,8 +95,6 @@ export default function PaymentGatewaysPage() {
               negocio y a las expectativas de tus clientes.
             </p>
           </div>
-
-          {/* Beneficios */}
           <div className="mb-20">
             <h2 className="text-2xl font-bold mb-10 text-center">
               Beneficios de una integración profesional
@@ -117,7 +112,6 @@ export default function PaymentGatewaysPage() {
                   información sensible de tus clientes.
                 </p>
               </div>
-
               <div className="text-center">
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-md bg-primary/10 text-primary mb-4 mx-auto">
                   <Zap className="h-6 w-6" />
@@ -130,7 +124,6 @@ export default function PaymentGatewaysPage() {
                   y aumentan la conversión.
                 </p>
               </div>
-
               <div className="text-center">
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-md bg-primary/10 text-primary mb-4 mx-auto">
                   <BarChart className="h-6 w-6" />
@@ -143,7 +136,6 @@ export default function PaymentGatewaysPage() {
                   pago y optimizar tu estrategia.
                 </p>
               </div>
-
               <div className="text-center">
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-md bg-primary/10 text-primary mb-4 mx-auto">
                   <Users className="h-6 w-6" />
@@ -158,8 +150,6 @@ export default function PaymentGatewaysPage() {
               </div>
             </div>
           </div>
-
-          {/* Pasarelas disponibles */}
           <div className="mb-20">
             <h2 className="text-2xl font-bold mb-10 text-center">
               Pasarelas de pago que implemento
@@ -194,8 +184,6 @@ export default function PaymentGatewaysPage() {
               ))}
             </div>
           </div>
-
-          {/* Casos de estudio */}
           <div className="mb-20">
             <h2 className="text-2xl font-bold mb-10 text-center">
               Casos de éxito
@@ -236,18 +224,13 @@ export default function PaymentGatewaysPage() {
               ))}
             </div>
           </div>
-
-          {/* Proceso de implementación */}
           <div className="mb-20">
             <h2 className="text-2xl font-bold mb-10 text-center">
               Proceso de implementación
             </h2>
             <div className="max-w-3xl mx-auto">
               <div className="relative">
-                {/* Línea de tiempo vertical */}
                 <div className="absolute left-9 top-0 h-full w-0.5 bg-border"></div>
-
-                {/* Pasos */}
                 <div className="space-y-12">
                   <div className="relative flex items-start">
                     <div className="absolute left-0 rounded-full bg-primary/20 p-2.5 text-primary">
@@ -266,7 +249,6 @@ export default function PaymentGatewaysPage() {
                       </p>
                     </div>
                   </div>
-
                   <div className="relative flex items-start">
                     <div className="absolute left-0 rounded-full bg-primary/20 p-2.5 text-primary">
                       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
@@ -284,7 +266,6 @@ export default function PaymentGatewaysPage() {
                       </p>
                     </div>
                   </div>
-
                   <div className="relative flex items-start">
                     <div className="absolute left-0 rounded-full bg-primary/20 p-2.5 text-primary">
                       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
@@ -303,7 +284,6 @@ export default function PaymentGatewaysPage() {
                       </p>
                     </div>
                   </div>
-
                   <div className="relative flex items-start">
                     <div className="absolute left-0 rounded-full bg-primary/20 p-2.5 text-primary">
                       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
@@ -321,7 +301,6 @@ export default function PaymentGatewaysPage() {
                       </p>
                     </div>
                   </div>
-
                   <div className="relative flex items-start">
                     <div className="absolute left-0 rounded-full bg-primary/20 p-2.5 text-primary">
                       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
@@ -344,8 +323,6 @@ export default function PaymentGatewaysPage() {
               </div>
             </div>
           </div>
-
-          {/* CTA */}
           <div className="max-w-3xl mx-auto mt-20 text-center">
             <h2 className="text-2xl font-bold mb-4">
               ¿Listo para implementar un sistema de pagos robusto?
@@ -363,7 +340,6 @@ export default function PaymentGatewaysPage() {
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );

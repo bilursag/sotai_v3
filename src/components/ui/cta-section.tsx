@@ -4,16 +4,11 @@ import { ArrowRight, MessageSquare, Calendar, Clock } from "lucide-react";
 export function CTASection() {
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
-
-      {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-
       <div className="container relative mx-auto px-4">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
-            {/* Content */}
             <div className="lg:col-span-3 space-y-6">
               <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5">
                 <span className="text-sm font-medium text-primary">
@@ -42,8 +37,6 @@ export function CTASection() {
                 </Link>
               </div>
             </div>
-
-            {/* Card */}
             <div className="lg:col-span-2 h-full">
               <div className="h-full rounded-lg border bg-card p-6 shadow-lg">
                 <div className="space-y-4">

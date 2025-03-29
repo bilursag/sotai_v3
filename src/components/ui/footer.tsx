@@ -8,7 +8,6 @@ export function Footer() {
     <footer className="border-t bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          {/* Columna 1: Información de contacto */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Sotai</h3>
             <p className="text-sm text-muted-foreground">
@@ -31,8 +30,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Columna 2: Servicios */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Servicios</h3>
             <ul className="mt-4 space-y-2 text-sm">
@@ -58,8 +55,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Columna 3: Recursos */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Recursos</h3>
             <ul className="mt-4 space-y-2 text-sm">
@@ -85,8 +80,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Columna 4: Legal */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Legal</h3>
             <ul className="mt-4 space-y-2 text-sm">
@@ -106,8 +99,6 @@ export function Footer() {
                 </Link>
               </li>
             </ul>
-
-            {/* Redes sociales */}
             <div className="mt-6">
               <h4 className="text-sm font-medium">Síguenos</h4>
               <div className="mt-2 flex space-x-3">
@@ -142,8 +133,6 @@ export function Footer() {
             </div>
           </div>
         </div>
-
-        {/* Copyright */}
         <div className="mt-12 border-t pt-6">
           <p className="text-center text-sm text-muted-foreground">
             &copy; {currentYear} Sotai. Todos los derechos reservados.

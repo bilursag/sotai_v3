@@ -1,6 +1,5 @@
 import { CheckCircle, Coffee, Code, FileSearch, MessageCircle, Settings, Zap } from "lucide-react";
 
-// Datos de las etapas del proceso
 const workflowSteps = [
   {
     id: 1,
@@ -80,7 +79,6 @@ export function Workflow() {
   return (
     <section className="py-20 bg-background/50">
       <div className="container mx-auto px-4">
-        {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 mb-4">
             <span className="text-sm font-medium text-primary">Metodología</span>
@@ -95,22 +93,18 @@ export function Workflow() {
           </p>
         </div>
 
-        {/* Timeline */}
         <div className="max-w-5xl mx-auto">
           {workflowSteps.map((step, index) => (
             <div key={step.id} className="relative mb-12 last:mb-0">
-              {/* Conector vertical (excepto para el último elemento) */}
               {index < workflowSteps.length - 1 && (
                 <div className="absolute left-6 top-14 bottom-0 w-0.5 bg-border" />
               )}
 
               <div className="flex items-start gap-6">
-                {/* Icono con círculo */}
                 <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-background shadow-sm ring-1 ring-border">
                   {step.icon}
                 </div>
 
-                {/* Contenido */}
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
                     <h3 className="text-xl font-semibold">{step.title}</h3>
@@ -121,7 +115,6 @@ export function Workflow() {
 
                   <p className="text-muted-foreground mb-4">{step.description}</p>
 
-                  {/* Detalles en una cuadrícula */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-4">
                     {step.details.map((detail, i) => (
                       <div key={i} className="flex items-start gap-2">
@@ -137,8 +130,6 @@ export function Workflow() {
             </div>
           ))}
         </div>
-
-        {/* CTA */}
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-2 rounded-lg border bg-card px-4 py-2 shadow-sm">
             <MessageCircle className="h-5 w-5 text-primary" />

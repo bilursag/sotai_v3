@@ -18,7 +18,6 @@ export function PageHeader({
   return (
     <div className="bg-muted/40">
       <div className="container mx-auto px-4 py-10">
-        {/* Breadcrumbs */}
         {breadcrumbs.length > 0 && (
           <nav className="flex mb-4 text-sm text-muted-foreground">
             <ol className="flex items-center flex-wrap">
@@ -54,13 +53,9 @@ export function PageHeader({
             </ol>
           </nav>
         )}
-
-        {/* Page Title */}
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           {title}
         </h1>
-
-        {/* Optional Description */}
         {description && (
           <p className="mt-2 text-lg text-muted-foreground max-w-3xl">
             {description}
