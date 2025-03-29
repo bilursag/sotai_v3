@@ -62,7 +62,7 @@ export function Hero() {
                     <span className="text-foreground"> React, &#123; useState, useEffect &#125; </span>
                     <span className="text-blue-500">from</span>
                     <span className="text-foreground"> </span>
-                    <span className="text-green-500">'react'</span>
+                    <span className="text-green-500">&apos;react&apos;</span>
                     <span className="text-foreground">;</span>
 
                     <br /><br />
@@ -71,7 +71,7 @@ export function Hero() {
                     <span className="text-foreground"> &#123; motion &#125; </span>
                     <span className="text-blue-500">from</span>
                     <span className="text-foreground"> </span>
-                    <span className="text-green-500">'framer-motion'</span>
+                    <span className="text-green-500">&apos;framer-motion&apos;</span>
                     <span className="text-foreground">;</span>
 
                     <br /><br />
@@ -79,7 +79,7 @@ export function Hero() {
                     <span className="text-purple-500">interface</span>
                     <span className="text-foreground"> </span>
                     <span className="text-yellow-500">Project</span>
-                    <span className="text-foreground"> &#123;</span>
+                    <span className="text-foreground">&#123;</span>
                     <br />
                     <span className="text-foreground">  id: </span>
                     <span className="text-yellow-500">number</span>
@@ -126,14 +126,14 @@ export function Hero() {
                     <span className="text-foreground"> () =&gt; &#123;</span>
                     <br />
                     <span className="text-foreground">      </span>
-                    <span className="text-green-500">// Fetching projects data</span>
+                    <span className="text-green-500">&#123;// Fetching projects data &#125;</span>
                     <br />
                     <span className="text-foreground">      </span>
                     <span className="text-blue-500">const</span>
                     <span className="text-foreground"> response = </span>
                     <span className="text-blue-500">await</span>
                     <span className="text-foreground"> fetch(</span>
-                    <span className="text-green-500">'/api/projects'</span>
+                    <span className="text-green-500">&apos;/api/projects&apos;</span>
                     <span className="text-foreground">);</span>
                     <br />
                     <span className="text-foreground">      </span>
