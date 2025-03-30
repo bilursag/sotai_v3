@@ -60,6 +60,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/privacy" className="hover:underline">
+                  Política de Privacidad
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:underline mt-6 inline-block font-medium text-primary">
                   Contáctenos
                 </Link>

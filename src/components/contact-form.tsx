@@ -223,7 +223,7 @@ export function ContactForm() {
 
       <p className="text-xs text-muted-foreground mt-4">
         Al enviar este formulario, aceptas nuestra{" "}
-        <a href="/privacidad" className="text-primary hover:underline">
+        <a href="/privacy" className="text-primary hover:underline">
           política de privacidad
         </a>{" "}
         y el procesamiento de tus datos personales.
