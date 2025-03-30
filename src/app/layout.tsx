@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Sotai",
   description: " Desarrollo de software full stack",
   icons: {
-    icon: "/android-chrome-192x192.png"
+    icon: "/favicon-32x32.png"
   }
 };
 
