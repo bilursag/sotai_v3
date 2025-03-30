@@ -134,7 +134,7 @@ export default function ContactPage() {
                       href="mailto:contacto@tudominio.com"
                       className="inline-flex items-center text-primary hover:underline mt-2"
                     >
-                      contacto@tudominio.com
+                      contacto@sotai-dev.com
                       <Send className="ml-2 h-4 w-4" />
                     </a>
                   </div>
