@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/ui/navbar";
-
+import ReCaptchaProvider from "@/components/recaptcha-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,8 +35,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <ReCaptchaProvider>
+            <Navbar />
+            {children}
+          </ReCaptchaProvider>
         </ThemeProvider>
       </body>
     </html>

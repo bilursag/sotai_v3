@@ -3,8 +3,12 @@
 
 import { useState } from "react";
 import { Send } from "lucide-react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { RecaptchaBadge } from "./recaptcha-badge";
 
 export function ContactForm() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,6 +21,7 @@ export function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -34,9 +39,37 @@ export function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("idle");
+    setErrorMessage("");
+
+    if (!executeRecaptcha) {
+      setSubmitStatus("error");
+      setErrorMessage("reCAPTCHA no está disponible. Por favor, actualiza la página.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Ejecutar reCAPTCHA y obtener el token
+      const recaptchaToken = await executeRecaptcha('contact_form');
+
+      // Enviar formulario con token de reCAPTCHA
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Ocurrió un error al enviar el mensaje');
+      }
+
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -46,7 +79,9 @@ export function ContactForm() {
         type: "general",
       });
     } catch (error) {
+      console.error('Error en el envío:', error);
       setSubmitStatus("error");
+      setErrorMessage(error instanceof Error ? error.message : 'Error en el envío del mensaje');
     } finally {
       setIsSubmitting(false);
     }
@@ -182,7 +217,7 @@ export function ContactForm() {
 
       {submitStatus === "error" && (
         <div className="rounded-md bg-red-50 dark:bg-red-900/20 p-4 text-sm text-red-800 dark:text-red-400">
-          Hubo un error al enviar tu mensaje. Por favor intenta nuevamente.
+          Hubo un error al enviar tu mensaje: {errorMessage || "Por favor intenta nuevamente."}
         </div>
       )}
 
@@ -193,6 +228,8 @@ export function ContactForm() {
         </a>{" "}
         y el procesamiento de tus datos personales.
       </p>
+
+      <RecaptchaBadge />
     </form>
   );
 }
