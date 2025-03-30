@@ -60,7 +60,7 @@ export async function POST(request: Request) {
       from: 'Formulario de Contacto <onboarding@resend.dev>', // Usar este correo inicialmente
       to: ['tu-email@dominio.com'], // El correo donde recibirás los mensajes
       subject: subject || `Nuevo mensaje de contacto: ${type}`,
-      reply_to: email,
+      replyTo: email,
       react: EmailTemplate({ name, email, type, subject, message }),
     });
 
