@@ -15,7 +15,7 @@ export default function ContactPage() {
     <>
       <PageHeader
         title="Contacto"
-        description="Estoy aquí para responder tus preguntas y ayudarte con tu próximo proyecto"
+        description="Estamos aquí para responder tus preguntas y ayudarte con tu próximo proyecto"
         breadcrumbs={[{ title: "Contacto", href: "/contact" }]}
       />
 
@@ -27,9 +27,9 @@ export default function ContactPage() {
                 Hablemos sobre tu proyecto
               </h2>
               <p className="text-muted-foreground mb-8">
-                Estoy comprometido a ofrecer soluciones de desarrollo de alta
+                Estamos comprometidos a ofrecer soluciones de desarrollo de alta
                 calidad para tu negocio. Ya sea que tengas un proyecto en mente
-                o simplemente quieras hacer algunas preguntas, estaré encantado
+                o simplemente quieras hacer algunas preguntas, estaremos encantado
                 de ayudarte.
               </p>
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
                       href="mailto:contacto@tudominio.com"
                       className="text-primary hover:underline mt-1 block"
                     >
-                      contacto@tudominio.com
+                      contacto@sotai-dev.com
                     </a>
                   </div>
                 </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                       href="tel:+123456789"
                       className="text-primary hover:underline mt-1 block"
                     >
-                      +1 (234) 567-890
+                      +56 9 8762 3350
                     </a>
                   </div>
                 </div>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                     <p className="text-sm text-muted-foreground mt-1">
                       Disponible para proyectos remotos
                     </p>
-                    <p className="mt-1">Ciudad, País</p>
+                    <p className="mt-1">Valdivia, Chile</p>
                   </div>
                 </div>
 

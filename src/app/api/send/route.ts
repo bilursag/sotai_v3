@@ -6,7 +6,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 const RECAPTCHA_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 
-// Función para verificar el token de reCAPTCHA
 async function verifyRecaptcha(token: string) {
   const formData = new URLSearchParams();
   formData.append('secret', RECAPTCHA_SECRET_KEY || '');
@@ -28,7 +27,6 @@ export async function POST(request: Request) {
   try {
     const { name, email, subject, message, type, recaptchaToken } = await request.json();
     
-    // Validación básica
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Nombre, email y mensaje son requeridos' },
@@ -36,7 +34,6 @@ export async function POST(request: Request) {
       );
     }
     
-    // Verificar reCAPTCHA
     if (!recaptchaToken) {
       return NextResponse.json(
         { error: 'Verificación de reCAPTCHA es requerida' },
@@ -46,7 +43,6 @@ export async function POST(request: Request) {
     
     const recaptchaVerification = await verifyRecaptcha(recaptchaToken);
     
-    // Verificar si reCAPTCHA pasó la validación
     if (!recaptchaVerification.success || recaptchaVerification.score < 0.5) {
       console.log('reCAPTCHA falló:', recaptchaVerification);
       return NextResponse.json(
@@ -55,10 +51,9 @@ export async function POST(request: Request) {
       );
     }
     
-    // Enviar el email usando la plantilla React
     const data = await resend.emails.send({
-      from: 'Contacto <contacto@sotai-dev.com>', // Usar este correo inicialmente
-      to: ['franciscomuniozs@gmail.com'], // El correo donde recibirás los mensajes
+      from: 'Contacto <contacto@sotai-dev.com>',
+      to: ['franciscomuniozs@gmail.com'],
       subject: subject || `Nuevo mensaje de contacto: ${type}`,
       replyTo: email,
       react: EmailTemplate({ name, email, type, subject, message }),

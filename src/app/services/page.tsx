@@ -284,7 +284,7 @@ export default function Services() {
           <div className="max-w-3xl mx-auto mt-20 text-center">
             <h2 className="text-2xl font-bold mb-4">¿No estás seguro de qué servicio necesitas?</h2>
             <p className="text-muted-foreground mb-6">
-              Agenda una consulta gratuita y te ayudaré a identificar la mejor solución para tu proyecto.
+              Agenda una consulta gratuita y te ayudaremos a identificar la mejor solución para tu proyecto.
             </p>
             <Link
               href="/contact"

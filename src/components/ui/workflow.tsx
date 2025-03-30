@@ -87,7 +87,7 @@ export function Workflow() {
             Un proceso <span className="text-primary">estructurado</span> para resultados excepcionales
           </h2>
           <p className="text-muted-foreground">
-            Mi enfoque metodológico garantiza proyectos entregados a tiempo,
+            Nuestro enfoque metodológico garantiza proyectos entregados a tiempo,
             dentro del presupuesto y con la calidad que esperas. Cada fase está
             diseñada para minimizar riesgos y maximizar el valor.
           </p>
@@ -134,7 +134,7 @@ export function Workflow() {
           <div className="inline-flex items-center gap-2 rounded-lg border bg-card px-4 py-2 shadow-sm">
             <MessageCircle className="h-5 w-5 text-primary" />
             <span className="text-sm">
-              ¿Tienes preguntas sobre mi proceso de trabajo?{" "}
+              ¿Tienes preguntas sobre nuestro proceso de trabajo?{" "}
               <a href="/contact" className="font-medium text-primary hover:underline">
                 Agenda una consulta gratuita
               </a>

@@ -24,9 +24,8 @@ const technologies = [
     items: [
       { name: "Node.js", level: 4 },
       { name: "Express.js", level: 4 },
-      { name: "NestJS", level: 3 },
-      { name: "Python", level: 3 },
-      { name: "Django", level: 3 },
+      { name: "Laravel", level: 4 },
+      { name: "Ruby on Rails", level: 5 },
       { name: "RESTful APIs", level: 5 },
       { name: "GraphQL", level: 4 }
     ]
@@ -112,8 +111,8 @@ export function TechStack() {
             Herramientas y tecnologías que <span className="text-primary">domino</span>
           </h2>
           <p className="text-muted-foreground">
-            Utilizo un stack moderno y eficiente para crear aplicaciones rápidas,
-            escalables y con excelente experiencia de usuario. Mi expertise cubre el ciclo completo
+            Utilizamos un stack moderno y eficiente para crear aplicaciones rápidas,
+            escalables y con excelente experiencia de usuario. Nuestra expertise cubre el ciclo completo
             de desarrollo, desde el frontend hasta el backend y despliegue.
           </p>
         </div>
@@ -171,7 +170,7 @@ export function TechStack() {
             href="/contact"
             className="inline-flex items-center text-sm font-medium text-primary hover:underline"
           >
-            Contáctame para discutir tus requerimientos específicos
+            Contáctanos para discutir tus requerimientos específicos
             <ArrowRight className="ml-1 h-4 w-4" />
           </a>
         </div>
