@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-zinc dark:prose-invert max-w-none">
               <p className="lead">
-                Esta Política de Privacidad describe cómo Sotai ("nosotros", "nuestro", o "la empresa")
+                Esta Política de Privacidad describe cómo Sotai (&quot;nosotros&quot;, &quot;nuestro&quot;, o &quot;la empresa&quot;)
                 recopila, utiliza y comparte información personal cuando usted utiliza nuestro sitio web
                 (sotai-dev.com) y nuestros servicios.
               </p>
@@ -113,14 +113,14 @@ export default function PrivacyPolicyPage() {
               <ul>
                 <li>Derecho de acceso y obtención de una copia de sus datos personales</li>
                 <li>Derecho de rectificación de datos inexactos</li>
-                <li>Derecho de eliminación (el "derecho al olvido")</li>
+                <li>Derecho de eliminación (el &quot;derecho al olvido&quot;)</li>
                 <li>Derecho a restringir el procesamiento</li>
                 <li>Derecho a la portabilidad de los datos</li>
                 <li>Derecho a oponerse al procesamiento</li>
                 <li>Derecho a retirar el consentimiento</li>
               </ul>
               <p>
-                Para ejercer estos derechos, por favor contáctenos a través de los medios proporcionados en la sección "Contáctenos".
+                Para ejercer estos derechos, por favor contáctenos a través de los medios proporcionados en la sección &quot;Contáctenos&quot;.
               </p>
 
               <h2>Cookies y tecnologías similares</h2>
