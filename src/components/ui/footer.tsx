@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Sotai</h3>
+            <h3 className="text-lg font-semibold">組態 Sotai</h3>
             <p className="text-sm text-muted-foreground">
               Soluciones de desarrollo personalizadas para sus negocios
             </p>

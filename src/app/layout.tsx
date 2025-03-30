@@ -19,6 +19,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Sotai",
   description: " Desarrollo de software full stack",
+  icons: {
+    icon: "/android-chrome-192x192.png"
+  }
 };
 
 export default function RootLayout({

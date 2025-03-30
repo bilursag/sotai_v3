@@ -29,6 +29,7 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
+            <span className="text-xl font-semibold">組態</span>
             <span className="text-xl font-bold">Sotai</span>
           </Link>
           <div className="hidden md:flex md:items-center md:space-x-6">
