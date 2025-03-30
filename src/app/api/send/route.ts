@@ -57,8 +57,8 @@ export async function POST(request: Request) {
     
     // Enviar el email usando la plantilla React
     const data = await resend.emails.send({
-      from: 'Formulario de Contacto <onboarding@resend.dev>', // Usar este correo inicialmente
-      to: ['tu-email@dominio.com'], // El correo donde recibirás los mensajes
+      from: 'Contacto <contacto@sotai-dev.com>', // Usar este correo inicialmente
+      to: ['franciscomuniozs@gmail.com'], // El correo donde recibirás los mensajes
       subject: subject || `Nuevo mensaje de contacto: ${type}`,
       replyTo: email,
       react: EmailTemplate({ name, email, type, subject, message }),
