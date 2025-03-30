@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Code, Database, Globe, Server, Palette, Cpu, ArrowRight, CreditCard } from "lucide-react";
+import { Code, Database, Globe, Server, Palette, Cpu, ArrowRight, CreditCard, ChevronLeft, ChevronRight } from "lucide-react";
 
 const technologies = [
   {
@@ -24,8 +24,9 @@ const technologies = [
     items: [
       { name: "Node.js", level: 4 },
       { name: "Express.js", level: 4 },
-      { name: "Laravel", level: 4 },
-      { name: "Ruby on Rails", level: 5 },
+      { name: "NestJS", level: 3 },
+      { name: "Python", level: 3 },
+      { name: "Django", level: 3 },
       { name: "RESTful APIs", level: 5 },
       { name: "GraphQL", level: 4 }
     ]
@@ -99,6 +100,24 @@ const technologies = [
 
 export function TechStack() {
   const [activeCategory, setActiveCategory] = useState(technologies[0].category);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    const container = document.getElementById('category-scroll-container');
+    if (!container) return;
+
+    const scrollAmount = 200; // Pixels to scroll
+    const newPosition = direction === 'left'
+      ? Math.max(0, scrollPosition - scrollAmount)
+      : scrollPosition + scrollAmount;
+
+    container.scrollTo({
+      left: newPosition,
+      behavior: 'smooth'
+    });
+
+    setScrollPosition(newPosition);
+  };
 
   return (
     <section className="py-20 bg-background">
@@ -108,31 +127,57 @@ export function TechStack() {
             <span className="text-sm font-medium text-primary">Stack Tecnológico</span>
           </div>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-            Herramientas y tecnologías que <span className="text-primary">domino</span>
+            Herramientas y tecnologías que <span className="text-primary">dominamos</span>
           </h2>
           <p className="text-muted-foreground">
             Utilizamos un stack moderno y eficiente para crear aplicaciones rápidas,
-            escalables y con excelente experiencia de usuario. Nuestra expertise cubre el ciclo completo
+            escalables y con excelente experiencia de usuario. Nuestro expertise cubre el ciclo completo
             de desarrollo, desde el frontend hasta el backend y despliegue.
           </p>
         </div>
 
-        <div className="flex overflow-x-auto pb-4 mb-8 gap-2 justify-center">
-          {technologies.map((tech) => (
-            <button
-              key={tech.category}
-              onClick={() => setActiveCategory(tech.category)}
-              className={cn(
-                "flex items-center px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap",
-                activeCategory === tech.category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-              )}
-            >
-              <span className="mr-2">{tech.icon}</span>
-              {tech.category}
-            </button>
-          ))}
+        {/* Categoría selector con navegación */}
+        <div className="relative mb-8">
+          {/* Botón izquierdo */}
+          <button
+            onClick={() => handleScroll('left')}
+            className="absolute left-0 top-1/3 -translate-y-1/2 z-10 p-1 rounded-full bg-background/80 border shadow-sm hover:bg-muted md:hidden"
+            aria-label="Desplazar izquierda"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+
+          {/* Contenedor con desplazamiento horizontal */}
+          <div
+            id="category-scroll-container"
+            className="flex overflow-x-auto pb-4 gap-2 justify-start md:justify-center scrollbar-hide px-8 md:px-0"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {technologies.map((tech) => (
+              <button
+                key={tech.category}
+                onClick={() => setActiveCategory(tech.category)}
+                className={cn(
+                  "flex items-center px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0",
+                  activeCategory === tech.category
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                )}
+              >
+                <span className="mr-2">{tech.icon}</span>
+                {tech.category}
+              </button>
+            ))}
+          </div>
+
+          {/* Botón derecho */}
+          <button
+            onClick={() => handleScroll('right')}
+            className="absolute right-0 top-1/3 -translate-y-1/2 z-10 p-1 rounded-full bg-background/80 border shadow-sm hover:bg-muted md:hidden"
+            aria-label="Desplazar derecha"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -164,13 +209,13 @@ export function TechStack() {
 
         <div className="mt-16 text-center">
           <p className="text-muted-foreground mb-4">
-            ¿No encuentras la tecnología que necesitas para tu proyecto?
+            ¿No encuentran la tecnología que necesitan para su proyecto?
           </p>
           <a
             href="/contact"
             className="inline-flex items-center text-sm font-medium text-primary hover:underline"
           >
-            Contáctanos para discutir tus requerimientos específicos
+            Contáctenos para discutir sus requerimientos específicos
             <ArrowRight className="ml-1 h-4 w-4" />
           </a>
         </div>
